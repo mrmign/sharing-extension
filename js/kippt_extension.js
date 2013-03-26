@@ -18,6 +18,12 @@ $(function() {
         
         // Clear loading
         $('#id_list').html('');
+        if(data.length === 0)
+        {
+            $('#id_list').hide();
+            $('#new_list').css('display', 'inline-block');
+            $('#id_new_list').focus();
+        }
         for (var i in data) {
             var list = data[i];
             $('#id_list').append(new Option(list["group_name"], list['id']));
@@ -107,10 +113,10 @@ $(function() {
                 });
 
                 // // Fill lists from cache
-                var listCache = localStorage.getItem('kipptListCache');
-                if (listCache) {
-                    Kippt.updateLists(JSON.parse(listCache));
-                }
+                // var listCache = localStorage.getItem('kipptListCache');
+                // if (listCache) {
+                //     Kippt.updateLists(JSON.parse(listCache));
+                // }
 
                 // Update lists from remote
                 $.getJSON(
@@ -118,12 +124,13 @@ $(function() {
                     function(response) {
                         var responseJSON = JSON.stringify(response.objects);
                         // Update only if lists have changed
-                        if (responseJSON !== listCache) {
-                            // Update UI
-                            Kippt.updateLists(response.objects);
-                            // Save to cache
-                            localStorage.setItem('kipptListCache', responseJSON);
-                        }
+                        Kippt.updateLists(response.objects);
+                        // if (responseJSON !== listCache) {
+                        //     // Update UI
+                        //     Kippt.updateLists(response.objects);
+                        //     // Save to cache
+                        //     localStorage.setItem('kipptListCache', responseJSON);
+                        // }
                     }
                 )
 

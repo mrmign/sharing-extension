@@ -8,10 +8,14 @@
     
   "browser_action": {
       "default_title": "Share links.",
-      "default_icon": "img/icon.png",
+      "default_icon": "img/icon19.png",
       "default_popup": "share.html"
   },
-  
+  "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
 }
