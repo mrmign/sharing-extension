@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/extension.css">
+    <link rel="stylesheet" type="text/css" href="css/tipsy.css">
+    <script type="text/javascript" src="js/vendor/jquery.js" charset="utf-8"></script>
+    <!-- <script type="text/javascript" src="js/vendor/socket.js" charset="utf-8"></script> -->
+    <script type="text/javascript" src="js/vendor/spin.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/vendor/tipsy.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/kippt_extension.js" charset="utf-8"></script>
+</head>
+<body>
+    <div id="kippt-frame">
+        <div id="kippt-header">
+            <a href="http://www.sharing.com:8000" title="Open Share" target="_blank" class="logo">Share</a>
+           <!--  <div class="existing">
+                <div class="loading"></div>
+                <a href="#">Modify existing clip</a>
+            </div> -->
+            <a href="http://www.sharing.com:8000/me/profile" title="View Your profile" target="_blank" class="profile"></a>
+            <!-- <a href="http://www.sharing.com:8000/inbox/" title="Open Inbox" target="_blank" class="home"></a> -->
+        </div>
+
+        <div>
+            <input id="id_title" type="text" name="title" maxlength="512" placeholder="Title" value="" />
+        </div>
+        <div>
+            <textarea id="id_notes" rows="10" cols="40" name="notes" placeholder="Enter notes and #tags here..."></textarea>
+        </div>
+
+        <div id="kippt-list">
+            <select class="lists" id="id_list">
+                <option value="inbox">Inbox</option>
+            </select>
+            <div id="new_list">
+                <input type="text" placeholder="New list name" id="id_new_list" name="new_list" />
+                <input type="checkbox" id="id_private"><label for="id_private">Private</label>
+            </div>
+           <!--  <div class="kippt-later">
+                <input type="checkbox" id="id_is_read_later"><label for="id_is_read_later">Read Later</label>
+            </div> -->
+        </div>
+
+        <div id="kippt-actions">
+            <!-- <div class="twitter" data-connect-title="Click to connect with Twitter" data-service-name="Twitter">
+                <input type="checkbox" class="share" id="share-twitter" data-service="twitter" />
+                <label for="share-twitter" class="toggle"></label>
+            </div> -->
+                    
+            <input type="submit" value="Save" id="submit_clip">
+        </div>
+    </div>
+</body>
+</html>
