@@ -24,19 +24,23 @@ $(function() {
             $('#new_list').css('display', 'inline-block');
             $('#id_new_list').focus();
         }
-        for (var i in data) {
+        else
+        {
+            for (var i in data) {
             var list = data[i];
             $('#id_list').append(new Option(list["group_name"], list['id']));
         }
         
-        $('#id_list').append('<option id="new-list-toggle">-- New list --</option>');
-        $('#id_list').on('change', function(){
+            $('#id_list').append('<option id="new-list-toggle">-- New list --</option>');
+            $('#id_list').on('change', function(){
             if ($(this).children("option#new-list-toggle:selected").length) {
                 $('#id_list').hide();
                 $('#new_list').css('display', 'inline-block');
                 $('#id_new_list').focus();
             }
         });
+        }
+        
     };
 
     chrome.tabs.getSelected(null, function(tab) {
